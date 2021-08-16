@@ -10,7 +10,7 @@ links = {
     "PCV" : "poly-canyon-village.html",
     "Sierra Madre" : "sierra-madre-towers.html",
     "Red Bricks" : "south-mountain.html",
-    "YTT" : "ytt.html",
+    "Yakitutu" : "ytt.html",
     "Yosemite" : "yosemite.html"
     }
 
