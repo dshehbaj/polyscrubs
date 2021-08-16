@@ -5,11 +5,11 @@ from time import sleep
 main_url = "http://washalert.washlaundry.com/washalertweb/calpoly/"
 
 links = {
-    "Cerro Vista" : "cerro-vista.html",
-    "North Mountain" : "north-mountain.html",
+    "CerroVista" : "cerro-vista.html",
+    "NorthMountain" : "north-mountain.html",
     "PCV" : "poly-canyon-village.html",
-    "Sierra Madre" : "sierra-madre-towers.html",
-    "Red Bricks" : "south-mountain.html",
+    "SierraMadre" : "sierra-madre-towers.html",
+    "RedBricks" : "south-mountain.html",
     "Yakitutu" : "ytt.html",
     "Yosemite" : "yosemite.html"
     }
