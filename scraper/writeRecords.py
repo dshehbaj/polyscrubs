@@ -7,7 +7,6 @@ import getMachines as gm
 wash_alert = "http://washalert.washlaundry.com/washalertweb/calpoly/WASHALERtweb.aspx?location="
 
 def getData():
-    numMachines = 0
     machine_urls = {}
     machine_data = {}
     locations = gl.getLocations()
@@ -19,15 +18,12 @@ def getData():
             key = key.replace('---', '-') #Needed For Yakitutu Buildings
             machine_urls[key] = url
     for location, locUrl in machine_urls.items():
-        info = gm.getMachines(locUrl, location)
-        machine_data[location] = info[0]
-        numMachines += info[1]
-    return (machine_data, numMachines)
+        tokens = location.split('_')
+        info = gm.getMachines(locUrl, tokens[0], tokens[1])
+        machine_data[location] = info
+    return machine_data
 
 if __name__ == "__main__":
     data = getData()
-    machineIDs = []
-    for location, buildings in data[0].items():
-        for bldg in buildings:
-            machineIDs.append(bldg[0])
+    for location, buildings in data.items():
         print(f'{location}: {buildings}')

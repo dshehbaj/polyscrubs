@@ -27,4 +27,6 @@ def getLocations():
     return locations
 
 if __name__ == "__main__":
-    getLocations()
+    data = getLocations()
+    for key, value in data.items():
+        print(f'{key}: {value}')
