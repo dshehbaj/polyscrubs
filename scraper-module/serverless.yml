@@ -1,6 +1,6 @@
 org: shehbaj
 app: polysrubs-scraper
-service: aws-python-scheduled-cron-project
+service: polyscrubs-scraper-cron-job
 
 plugins:
   - serverless-dotenv-plugin
@@ -15,6 +15,12 @@ provider:
   environment:
     DB_NAME: ${env:DB_NAME}
     TBL_NAME: ${env:TBL_NAME}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - timestream:*
+      Resource: "*"
+
 
 custom:
   pythonRequirements:
@@ -25,5 +31,5 @@ functions:
     handler: client.handler
     events:
       # Invoke Lambda function every 2nd minute from Mon-Fri
-      - schedule: cron(*/30 * * * *)
+      - schedule: cron(0/30 * ? * MON-SUN *)
 
