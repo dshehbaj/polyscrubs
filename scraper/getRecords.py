@@ -26,4 +26,4 @@ def getData():
 if __name__ == "__main__":
     data = getData()
     for location, buildings in data.items():
-        print(f'{location}: {buildings}')
+        print(buildings)
