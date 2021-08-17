@@ -22,7 +22,7 @@ custom:
 
 functions:
   cronHandler:
-    handler: client.main
+    handler: client.handler
     events:
       # Invoke Lambda function every 2nd minute from Mon-Fri
       - schedule: cron(*/30 * * * *)

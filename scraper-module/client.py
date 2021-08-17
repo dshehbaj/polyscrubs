@@ -3,7 +3,7 @@ from time import time
 import getRecords as gr
 import os
 
-def main():
+def handler(event, context):
     DB_NAME = os.environ['DB_NAME']
     TBL_NAME = os.environ['TBL_NAME']
     client = boto3.client('timestream-write')
@@ -14,4 +14,5 @@ def main():
             TableName=TBL_NAME,
             Records=records
         )
+    return data
 
