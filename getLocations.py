@@ -5,13 +5,13 @@ from time import sleep
 main_url = "http://washalert.washlaundry.com/washalertweb/calpoly/"
 
 links = {
-    "CerroVista" : "cerro-vista.html",
-    "NorthMountain" : "north-mountain.html",
-    "PCV" : "poly-canyon-village.html",
-    "SierraMadre" : "sierra-madre-towers.html",
-    "RedBricks" : "south-mountain.html",
-    "Yakitutu" : "ytt.html",
-    "Yosemite" : "yosemite.html"
+    "CerroVista" : "cerro-vista.html" # Only testing with Cerro machines only.
+    # "NorthMountain" : "north-mountain.html",
+    # "PCV" : "poly-canyon-village.html",
+    # "SierraMadre" : "sierra-madre-towers.html",
+    # "RedBricks" : "south-mountain.html",
+    # "Yakitutu" : "ytt.html",
+    # "Yosemite" : "yosemite.html"
     }
 
 def getLocations():
