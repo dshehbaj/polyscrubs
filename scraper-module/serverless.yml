@@ -16,6 +16,10 @@ provider:
     DB_NAME: ${env:DB_NAME}
     TBL_NAME: ${env:TBL_NAME}
 
+custom:
+  pythonRequirements:
+    pythonBin: python3
+
 functions:
   cronHandler:
     handler: client.main
