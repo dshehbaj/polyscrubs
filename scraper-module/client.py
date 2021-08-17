@@ -1,11 +1,11 @@
 import boto3
 from time import time
 import getRecords as gr
-import secrets
+import os
 
 def main():
-    DB_NAME = secrets.DB_NAME
-    TBL_NAME = secrets.TBL_NAME
+    DB_NAME = os.environ['DB_NAME']
+    TBL_NAME = os.environ['TBL_NAME']
     client = boto3.client('timestream-write')
     data = gr.getData()
     for records in data.values():
@@ -14,7 +14,4 @@ def main():
             TableName=TBL_NAME,
             Records=records
         )
-    return data
 
-if __name__ == "__main__":
-    main()

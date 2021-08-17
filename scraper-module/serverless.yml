@@ -2,6 +2,9 @@ org: shehbaj
 app: polysrubs-scraper
 service: aws-python-scheduled-cron-project
 
+plugins:
+  - serverless-dotenv-plugin
+  - serverless-python-requirements
 frameworkVersion: '2'
 
 
@@ -9,15 +12,14 @@ provider:
   name: aws
   runtime: python3.8
   lambdaHashingVersion: 20201221
+  environment:
+    DB_NAME: ${env:DB_NAME}
+    TBL_NAME: ${env:TBL_NAME}
 
 functions:
-  rateHandler:
-    handler: handler.run
-    events:
-      # Invoke Lambda function every minute
-      - schedule: rate(1 minute)
   cronHandler:
-    handler: handler.run
+    handler: client.main
     events:
       # Invoke Lambda function every 2nd minute from Mon-Fri
-      - schedule: cron(0/2 * ? * MON-FRI *)
+      - schedule: cron(*/30 * * * *)
+
