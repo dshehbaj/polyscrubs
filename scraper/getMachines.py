@@ -12,9 +12,8 @@ def getMachines(link: str, key: str):
         statuses = tr.findChildren('td', {'class': 'status'}, recursive='false')
         times = tr.findChildren('td', {'class': 'time'}, recursive='false')
         machine = []
-        machineInfo = key
         for type in types:
-            machineInfo += ('_' + type.text.strip().lower().replace(' ', '-'))
+            machineInfo = type.text.strip().lower().replace(' ', '-')
         for name in names:
             machineInfo += ('_' + name.text.strip().lower().replace(' ', '-'))
             numMachines += 1

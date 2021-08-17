@@ -31,5 +31,3 @@ if __name__ == "__main__":
         for bldg in buildings:
             machineIDs.append(bldg[0])
         print(f'{location}: {buildings}')
-    print(f'there are {data[1]} machines in total')
-    print(f'Machines ID: {machineIDs}')
