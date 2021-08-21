@@ -4,6 +4,7 @@ from time import time
 import boto3
 
 def getMachines(link: str, complex: str, bldg: str):
+    sleep(1)
     CURRENT_TIME = str(int(time() * 1000))
     data = get(link)
     soup = BeautifulSoup(data.text, 'html.parser')
