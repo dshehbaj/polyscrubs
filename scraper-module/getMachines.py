@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 from requests import get
-from time import time
+from asyncio import time
 import boto3
 
 def getMachines(link: str, complex: str, bldg: str):
