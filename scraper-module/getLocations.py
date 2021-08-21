@@ -1,6 +1,6 @@
 from requests import get
 from bs4 import BeautifulSoup
-from asyncio import sleep
+from time import sleep
 
 main_url = "http://washalert.washlaundry.com/washalertweb/calpoly/"
 
