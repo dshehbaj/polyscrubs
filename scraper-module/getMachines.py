@@ -1,10 +1,15 @@
+"""
+Function that returns all the machine data for a given building in a complext.
+@author Shehbaj
+"""
+
 from bs4 import BeautifulSoup
 from requests import get
 from time import sleep, time
-import boto3
+from random import randint
 
 def getMachines(link: str, complex: str, bldg: str):
-    sleep(1)
+    sleep(randint(3, 5))
     CURRENT_TIME = str(int(time() * 1000))
     data = get(link)
     soup = BeautifulSoup(data.text, 'html.parser')

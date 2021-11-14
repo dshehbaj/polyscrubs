@@ -1,6 +1,7 @@
-from bs4 import BeautifulSoup
-from time import sleep
-import requests as req
+"""
+Function to orchestrate getting all machine data for every building in every complex.
+@author Shehbaj Dhillon
+"""
 import getLocations as gl
 import getMachines as gm
 

@@ -1,6 +1,12 @@
+"""
+Function to return all the location IDs for all the buildings in each complex.
+@author Shehbaj Dhillon
+"""
+
 from requests import get
 from bs4 import BeautifulSoup
 from time import sleep
+from random import randint
 
 main_url = "http://washalert.washlaundry.com/washalertweb/calpoly/"
 
@@ -18,7 +24,7 @@ def getLocations():
     locations = {}
     for key, value in links.items():
         locations[key] = {}
-        sleep(1)
+        sleep(randint(3, 5))
         data = get(main_url + value)
         soup = BeautifulSoup(data.text, "html.parser")
         for link in soup.find_all("a"):
