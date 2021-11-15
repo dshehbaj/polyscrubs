@@ -24,7 +24,7 @@ def getLocations():
     locations = {}
     for key, value in links.items():
         locations[key] = {}
-        sleep(randint(3, 5))
+        sleep(randint(8, 10))
         data = get(main_url + value)
         soup = BeautifulSoup(data.text, "html.parser")
         for link in soup.find_all("a"):

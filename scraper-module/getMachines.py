@@ -9,7 +9,7 @@ from time import sleep, time
 from random import randint
 
 def getMachines(link: str, complex: str, bldg: str):
-    sleep(randint(3, 5))
+    sleep(randint(8, 10))
     CURRENT_TIME = str(int(time() * 1000))
     data = get(link)
     soup = BeautifulSoup(data.text, 'html.parser')
