@@ -1,7 +1,7 @@
 import boto3
 import getRecords as gr
 
-def handler():
+def handler(event=None, context=None):
     DB_NAME = "polyscrubsdb"
     TBL_NAME = "machinedata"
 
