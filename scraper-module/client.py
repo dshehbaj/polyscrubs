@@ -1,5 +1,4 @@
 import boto3
-from time import time
 import getRecords as gr
 import os
 import secrets
@@ -11,7 +10,12 @@ def handler(event, context):
     else:
         DB_NAME = secrets.DB_NAME
         TBL_NAME = secrets.TBL_NAME
-    client = boto3.client('timestream-write')
+        print(DB_NAME)
+        print(TBL_NAME)
+
+    #Choses default aws cli profile, change profile_name to use a different profile
+    client = boto3.Session(profile_name="default").client('timestream-write')
+
     data = gr.getData()
     for records in data.values():
         client.write_records(
