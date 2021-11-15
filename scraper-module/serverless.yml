@@ -1,0 +1,34 @@
+org: shehbaj
+app: polyscrubs-scraper
+service: polyscrubs-cron-job
+
+plugins:
+  - serverless-dotenv-plugin
+  - serverless-python-requirements
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: python3.9
+  lambdaHashingVersion: 20201221
+  environment:
+    DB_NAME: "polyscrubsdb"
+    TBL_NAME: "machinedata"
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - timestream:*
+      Resource: "*"
+
+custom:
+  pythonRequirements:
+    pythonBin: python3
+
+functions:
+  cronHandler:
+    handler: client.handler
+    timeout: 900 # 15 Minutes
+    events:
+      # Invoke Lambda function every 30th minute from Mon-Sun
+      - schedule: cron(0/30 * ? * MON-SUN *)
+
