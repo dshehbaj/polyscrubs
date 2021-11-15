@@ -5,8 +5,7 @@ def handler(event=None, context=None):
     DB_NAME = "polyscrubsdb"
     TBL_NAME = "machinedata"
 
-    #Choses default aws cli profile, change profile_name to use a different profile
-    client = boto3.Session(profile_name="default").client('timestream-write')
+    client = boto3.client('timestream-write')
 
     data = gr.getData()
     for records in data.values():
